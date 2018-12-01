@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+<<<<<<< HEAD
 #include"game.h"
 void menu()
 {
@@ -64,6 +65,40 @@ int main()
 			break;
 		}
 	} while (input);
+=======
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{	  
+  /*__|___|___ 	
+	__|___|___
+	  |   |   */
+	int i = 0;
+	int j = 0;
+	int a[3][3] = {0};
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf(" %c  ", a[3][3]);
+			if (j < 2)
+				printf("|");
+		}
+		printf("\n");
+		if (i < 2)
+		{
+			for (j = 0; j < 3; j++)
+			{
+				printf("---");
+				if (j < 2)
+				{
+					printf("|");
+				}
+			}
+			printf("\n");
+		}
+	}
+>>>>>>> 2709c4781aad33e8a1c26a03f8a6e222631a9ca6
 	system("pause");
 	return 0;
 

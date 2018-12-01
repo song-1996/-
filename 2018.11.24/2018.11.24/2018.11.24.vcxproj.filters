@@ -18,6 +18,7 @@
     <ClCompile Include="三子棋.c">
       <Filter>源文件</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="game.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -26,5 +27,7 @@
     <ClInclude Include="game.h">
       <Filter>头文件</Filter>
     </ClInclude>
+=======
+>>>>>>> 2709c4781aad33e8a1c26a03f8a6e222631a9ca6
   </ItemGroup>
 </Project>

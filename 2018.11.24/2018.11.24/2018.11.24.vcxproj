@@ -19,12 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="game.c" />
     <ClCompile Include="三子棋.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
   </ItemGroup>
+=======
+    <ClCompile Include="三子棋.c" />
+  </ItemGroup>
+>>>>>>> 2709c4781aad33e8a1c26a03f8a6e222631a9ca6
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{9EEF28D5-0E26-45C8-A16E-8021576D52AC}</ProjectGuid>
