@@ -2,9 +2,9 @@
 
 int main()
 {
-	int ino[] = {4,2,1,5,3,6};
-	int pos[] = { 4,2,5,6,3,1 };
-	Node* root=buildTree(ino, 6, pos, 6);
+	int arr[] = { 10,5,'#','#',15,6,'#','#',20,'#','#' };
+	Node* root = CreatBTree(arr, 11);
+	int ret = isValidBST(root);
 	system("pause");
 	return 0;
 

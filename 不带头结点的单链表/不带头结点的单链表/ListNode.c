@@ -283,3 +283,43 @@ ListNode* EntryNodeOfLoop(ListNode* pHead)
 	return p1;
 }
 void SListRemoveAll(ListNode**  pl, NDataType data);
+
+////////////////////////////////////////////////////////////////////////
+
+/*
+ListNode* swapPairs(ListNode** head) 
+{
+	if (*head == NULL || (*head)->_next == NULL)
+		return *head;
+	ListNode* tmp = (*head)->_next;
+	(*head)->_next = swapPairs(&(tmp->_next));
+	tmp->_next = *head;
+	return tmp;
+}
+*/
+
+ListNode* swapPairs(ListNode** head)
+{
+	if (!(*head) || !((*head)->_next))
+		return (*head);
+	ListNode* tmp = (*head)->_next;
+	ListNode* pre = (*head);
+	ListNode* pre_p = NULL;
+	(*head) = tmp;
+	while (tmp)
+	{
+		pre->_next = tmp->_next;
+		pre_p = pre;
+		tmp->_next = pre;
+		pre = pre->_next;
+		if (pre)
+			tmp = pre->_next;
+		else
+			tmp = pre;
+		if (tmp)
+			pre_p->_next = tmp;
+		else
+			pre_p->_next = pre;
+	}
+	return (*head);
+}

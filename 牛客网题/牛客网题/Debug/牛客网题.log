@@ -1,2 +1,2 @@
-﻿  机器人走方格2.cpp
-  牛客网题.vcxproj -> F:\c语言\代码库\-\牛客网题\Debug\牛客网题.exe
+﻿  翻转字符串.cpp
+LINK : fatal error LNK1104: 无法打开文件“F:\c语言\代码库\-\牛客网题\Debug\牛客网题.exe”

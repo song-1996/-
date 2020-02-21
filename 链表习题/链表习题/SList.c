@@ -95,11 +95,11 @@ Node* BuyNewNode(SDataType data)
 //}
 void SListPushBack(Node* pl, SDataType data)
 {
-	Node* new = BuyNewNode(data);
+	Node* newnode = BuyNewNode(data);
 	assert(pl);
 	if (pl->_pNext== NULL)
 	{
-		pl->_pNext = new;
+		pl->_pNext = newnode;
 	}
 	else
 	{
@@ -108,7 +108,7 @@ void SListPushBack(Node* pl, SDataType data)
 		{
 			p = p->_pNext;
 		}
-		p->_pNext = new;
+		p->_pNext = newnode;
 	}
 }
 Node* deleteDuplication(Node* pHead)
@@ -149,16 +149,36 @@ Node* deleteDuplication(Node* pHead)
 	return Newhead->_pNext;
 }
 
-test()
+	void _swapPairs(Node** head)
+	{
+		if (*head == NULL || (*head)->_pNext == NULL)
+			return;
+		Node* node = (*head)->_pNext->_pNext;
+		if ((*head)->_pNext)
+			swap((*head), (*head)->_pNext);
+		 _swapPairs(&node);
+		(*head)->_pNext->_pNext = node;
+	}
+	Node* swapPairs(Node* head)
+	{
+		if (head == NULL || head->_pNext == NULL)
+			return head;
+		Node* node = head->_pNext->_pNext;
+		if (head->_pNext)
+			swap(head, head->_pNext);
+		_swapPairs(&node);
+		head->_pNext->_pNext = node;
+		return head;
+	}
+
+void test()
 {
 	Node head;
 	head._pNext = NULL;
 	SListPushBack(&head,1);
 	SListPushBack(&head, 2);
 	SListPushBack(&head, 3);
-	SListPushBack(&head, 3);
-	SListPushBack(&head, 4);
 	SListPushBack(&head, 4);
 	SListPushBack(&head, 5);
-	deleteDuplication(&head);
+	swapPairs(head._pNext);
 }

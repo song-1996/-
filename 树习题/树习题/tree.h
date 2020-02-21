@@ -17,3 +17,4 @@ void DestroyBTree(Node** root);
 //Node* buildTree1(int* preorder, int preorderSize, int* inorder, int inorderSize);
 Node* _buildTree(int* ino, int inoSize, int* pos, int left, int right, int* index);
 Node* buildTree(int* inorder, int inorderSize, int* postorder, int postorderSize);
+int isValidBST(Node* root);

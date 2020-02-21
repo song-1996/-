@@ -27,3 +27,5 @@ ListNode* SListBack(ListNode**  pl);
 void SListRemove(ListNode**  pl, NDataType data);
 void SListRemoveAll(ListNode**  pl, NDataType data);
 ListNode* EntryNodeOfLoop(ListNode* pHead);
+////////////////////////////////////////////////////////////
+ListNode* swapPairs(ListNode** head);

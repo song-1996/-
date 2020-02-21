@@ -170,3 +170,44 @@ Node* buildTree(int* inorder, int inorderSize, int* postorder, int postorderSize
 	int index = postorderSize;
 	return _buildTree(inorder, inorderSize, postorder, 0, postorderSize, &index);
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+void Left_max(Node* root,int* max)
+{
+	if (!root)
+		return;
+	if (root->left)
+		Left_max(root->left,max);
+	if (*max < root->val)
+		*max = root->val;
+	if (root->right)
+		Left_max(root->right,max);
+}
+void Right_min(Node* root,int* min)
+{
+	if (!root)
+		return;
+	if (root->left)
+		Right_min(root->left, min);
+	if (*min > root->val)
+		*min = root->val;
+	if (root->right)
+		Right_min(root->right, min);
+}
+
+int isValidBST(Node* root)
+{
+	if (!root)
+		return 1;
+	int lmax=INT_MIN, rmin=INT_MAX;
+	Left_max(root->left,&lmax);
+	Right_min(root->right,&rmin);
+	if (root->val <= lmax || root->val >= rmin)
+		return 0;
+	if (root->left)
+		isValidBST(root->left);
+	if (root->right)
+		isValidBST(root->right);
+	return 1;
+}
