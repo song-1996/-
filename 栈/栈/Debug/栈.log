@@ -1,5 +1,0 @@
-﻿  Stack1.c
-  test1.c
-f:\c语言\数据结构\栈\栈\test1.c(5): warning C4013: “test”未定义；假设外部返回 int
-  正在生成代码...
-  栈.vcxproj -> F:\c语言\数据结构\栈\Debug\栈.exe
