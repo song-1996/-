@@ -1,0 +1,4 @@
+﻿  19.5.24.cpp
+f:\c语言\c++\多态\多态\19.5.24.cpp(599): warning C4250: “D”: 通过域控制继承“C1::C1::TestFunc1”
+  f:\c语言\c++\多态\多态\19.5.24.cpp(556): note: 参见“C1::TestFunc1”的声明
+  多态.vcxproj -> F:\c语言\c++\多态\Debug\多态.exe
