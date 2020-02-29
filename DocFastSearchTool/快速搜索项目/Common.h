@@ -7,6 +7,8 @@
 #include<vector>
 #include<set>
 #include<thread>
+#include<mutex>
+#include <condition_variable>
 #include<algorithm>
 #include".\sqlite\sqlite3.h"
 #pragma comment(lib,".\\sqlite\\sqlite3.lib")

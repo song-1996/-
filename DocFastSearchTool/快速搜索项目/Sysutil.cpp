@@ -1,5 +1,31 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"Sysutil.h"
+
+extern size_t g_FileCount;
+extern size_t g_ScanCount;
+size_t GetFileCount(const string &path)
+{
+	string _path = path;
+	_path += "\\*.*";
+	_finddata_t file;
+	long handle = _findfirst(_path.c_str(), &file);
+	if (handle == -1)
+	{
+		perror("_findfirst");
+		return 0;
+	}
+	do {
+		if (file.name[0] != '.')
+		{
+			if (file.attrib&_A_SUBDIR)
+				GetFileCount(path + "\\" + file.name);
+			else
+				g_ScanCount++;
+		}
+	} while (_findnext(handle, &file) == 0);
+	return g_ScanCount;
+}
+/////////////////////////////////////////////////////////////////////////////////
 void DirectoryList(const string& path,vector<string>& subfile, vector<string>& dirfile)
 {
 	string _path = path;

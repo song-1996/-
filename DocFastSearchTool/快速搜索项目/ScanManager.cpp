@@ -59,6 +59,9 @@ void ScanManager::ScanDirectory(const string& path)
 
 ///////////////////////////////////////////////////////////////////
 
+size_t g_FileCount = 0;
+size_t g_ScanCount = 0;
+
 ScanManager::ScanManager()
 {};
 ScanManager& ScanManager::CreateInstance(const string& path)
@@ -66,6 +69,8 @@ ScanManager& ScanManager::CreateInstance(const string& path)
 	static ScanManager sm;
 	thread Scan_thread(&StartScan,&sm ,path);
 	Scan_thread.detach();
+	thread Watch_thread(&StartWatch, &sm, path);
+	Watch_thread.detach();
 	return sm;
 }
 
@@ -73,7 +78,32 @@ void ScanManager::StartScan(const string &path)
 {
 	while (1)
 	{
-		this_thread::sleep_for(chrono::seconds(2));
+		//this_thread::sleep_for(chrono::seconds(2));
+		unique_lock<mutex> lock(m_mutex);
+		m_cond.wait(lock);
 		ScanDirectory(path);
+	}
+}
+
+/*
+bool DirectoryWatch(const string &path)
+{
+	size_t file_count= GetFileCount(path);
+	return g_FileCount != file_count;
+}
+*/
+void ScanManager::StartWatch(const string &path)
+{
+	while (1)
+	{
+		//监控path目录下文件的个数是否有变化
+		g_ScanCount = 0;
+		g_ScanCount = GetFileCount(path);
+		if (g_ScanCount!= g_FileCount)
+		{
+			//发送扫描信号
+			m_cond.notify_one();
+			g_FileCount = g_ScanCount;
+		}
 	}
 }
