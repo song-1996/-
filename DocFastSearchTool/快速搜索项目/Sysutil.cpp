@@ -110,6 +110,22 @@ void DrawMenu()
 	SetCurPos(2, Height - 5);
 	printf("ÇëÊäÈë:>");
 }
+void Next_line(int pos)
+{
+	while (pos == 24)
+	{
+		char c;
+		SetCurPos(2 + strlen("ÇëÊäÈë:>"), Height - 5);
+		cin >> c;
+		if (c == 'n')
+		{
+			system("cls");
+			DrawMenu();
+			pos = 5;
+			break;
+		}
+	}
+}
 
 //////////////////////////////////////////////////////////////////////////////////////
 

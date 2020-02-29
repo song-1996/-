@@ -29,3 +29,5 @@ string ChineseConvertPinYinInitials(const string& name);
 void ColourPrintf(const string  &str);
 
 void PrintfSearchstr(string &prefix, string &hightlight, string &suffix);
+
+void Next_line(int pos);

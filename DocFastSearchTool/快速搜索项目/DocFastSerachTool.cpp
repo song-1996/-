@@ -35,6 +35,7 @@ int main(int argc,char* argv[])
 			PrintfSearchstr(prefix, hightlight, suffix);
 			printf("%-65s", (it.second).c_str());
 			pos++;
+			Next_line(pos);
 		}
 		ret.clear();
 		SystemEnd();

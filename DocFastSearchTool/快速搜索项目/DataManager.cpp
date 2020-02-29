@@ -72,6 +72,7 @@ DataManager::DataManager()
 	sprintf(sql, ".\\db\\%s", DOC_DB);
 	m_dbmgr.Open(sql);
 	InitSqlite();
+	Clear();
 }
 
 DataManager& DataManager::CreateInstance()
@@ -83,6 +84,12 @@ void DataManager::InitSqlite()
 {
 	char sql[MAX_SQL_SIZE] = { 0 };
 	sprintf(sql, "create table if not exists %s(id integer primary key autoincrement,name text,pinyin text ,pinyininit text ,adress text);", DOC_TABLE);
+	m_dbmgr.ExecuteSql(sql);
+}
+void DataManager::Clear()
+{
+	char sql[MAX_SQL_SIZE] = { 0 };
+	sprintf(sql, "delete from %s;", DOC_TABLE);
 	m_dbmgr.ExecuteSql(sql);
 }
 DataManager::~DataManager()
@@ -192,7 +199,7 @@ void DataManager::SplitHightLight(const string &str, const string &key,
 	{
 		int i = 0, j = 0;
 		int pre_index = 0, suf_index = 0;
-		while (1)
+		while (i < str.size())
 		{
 			if (pos == j)
 			{
@@ -223,7 +230,7 @@ void DataManager::SplitHightLight(const string &str, const string &key,
 		int i = 0, j = 0;
 		int pre_index = 0, suf_index = 0;
 		int end_pos = -1;
-		while (1)
+		while (i<str.size())
 		{
 			if (j == end_pos)
 			{

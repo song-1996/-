@@ -15,7 +15,7 @@ using namespace std;
 #define MAX_SQL_SIZE 256
 #define DOC_DB "my_db"
 #define DOC_TABLE "my_table"
-#define MAX_BUF_SIZE 128
+#define MAX_BUF_SIZE 256
 #define title  "DocFastSerachTool"
 
 

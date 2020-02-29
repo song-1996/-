@@ -73,7 +73,7 @@ void ScanManager::StartScan(const string &path)
 {
 	while (1)
 	{
-		ScanDirectory(path);
 		this_thread::sleep_for(chrono::seconds(2));
+		ScanDirectory(path);
 	}
 }

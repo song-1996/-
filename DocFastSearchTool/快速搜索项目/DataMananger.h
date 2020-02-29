@@ -43,6 +43,8 @@ public:
 	//分割关键字
 	void SplitHightLight(const string &str, const string &key,
 		string &prefix, string &hightlight, string &suffix);
+	//清除数据库
+	void Clear();
 private:
 	SqliteManager m_dbmgr;
 };
