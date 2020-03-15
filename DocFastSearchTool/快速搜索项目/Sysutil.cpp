@@ -350,11 +350,23 @@ void ColourPrintf(const string  &str)
 
 void PrintfSearchstr(string &prefix, string &hightlight, string &suffix)
 {
-	cout << prefix;
-	ColourPrintf(hightlight);
-	cout << suffix;
-	char str[256] = { 0 };
 	int size = prefix.size() + hightlight.size() + suffix.size();
-	sprintf(str, "%-%%ds", 50 - size);
-	printf(str, "");
+	if (size < 30)
+	{
+		cout << prefix;
+		ColourPrintf(hightlight);
+		cout << suffix;
+	}
+	else
+	{
+		string tmp = prefix + hightlight + suffix;
+		if (string::npos != tmp.substr(0, 30).find(hightlight))
+		{
+			cout << prefix;
+			ColourPrintf(hightlight);
+			cout << tmp.substr(hightlight.size(), 30 - hightlight.size()-prefix.size()) << "....." << endl;
+		}
+		else
+			cout << tmp.substr(0, 30) << "....." << endl;
+	}
 }

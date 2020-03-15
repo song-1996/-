@@ -14,10 +14,10 @@
 #pragma comment(lib,".\\sqlite\\sqlite3.lib")
 using namespace std;
 
-#define MAX_SQL_SIZE 256
+#define MAX_SQL_SIZE 1024
 #define DOC_DB "my_db"
 #define DOC_TABLE "my_table"
-#define MAX_BUF_SIZE 256
+#define MAX_BUF_SIZE 1024
 #define title  "DocFastSerachTool"
 
 

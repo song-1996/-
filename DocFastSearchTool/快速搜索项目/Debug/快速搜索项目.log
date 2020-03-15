@@ -19,7 +19,6 @@ f:\c语言\代码库\-\docfastsearchtool\快速搜索项目\sysutil.cpp(127): wa
 f:\c语言\代码库\-\docfastsearchtool\快速搜索项目\sysutil.cpp(133): warning C4267: “参数”: 从“size_t”转换到“short”，可能丢失数据
 f:\c语言\代码库\-\docfastsearchtool\快速搜索项目\sysutil.cpp(144): warning C4267: “参数”: 从“size_t”转换到“short”，可能丢失数据
 f:\c语言\代码库\-\docfastsearchtool\快速搜索项目\sysutil.cpp(291): warning C4018: “<”: 有符号/无符号不匹配
-f:\c语言\代码库\-\docfastsearchtool\快速搜索项目\sysutil.cpp(358): warning C4476: "sprintf": 格式说明符中的类型字段字符“%”未知
   正在生成代码...
 sqlite3.lib(sqlite3.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“sqlite3.lib(sqlite3.obj)”或在“F:\c语言\代码库\-\DocFastSearchTool\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
   快速搜索项目.vcxproj -> F:\c语言\代码库\-\DocFastSearchTool\Debug\快速搜索项目.exe

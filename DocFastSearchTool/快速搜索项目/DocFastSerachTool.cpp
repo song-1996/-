@@ -33,6 +33,7 @@ int main(int argc,char* argv[])
 			string prefix, hightlight, suffix;
 			db.SplitHightLight(it.first, key, prefix, hightlight, suffix);
 			PrintfSearchstr(prefix, hightlight, suffix);
+			SetCurPos(52, pos);
 			printf("%-65s", (it.second).c_str());
 			pos++;
 			Next_line(pos);
